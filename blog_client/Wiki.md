@@ -138,3 +138,33 @@ $ touch src/views/Login.vue
 ### 测试访问
 - [x] 运行server端
 - [x] 运行client端
+
+
+## 顶栏组件
+顶栏组件用到:
+- 头像组件头像[ Avatar - Naive UI](https://www.naiveui.com/zh-CN/os-theme/components/avatar)
+- 按钮组件按钮[ Button - Naive UI](https://www.naiveui.com/zh-CN/os-theme/components/button)
+顶栏组件，可以跳转至主页、个人信息页、登录页以及发布文章页
+### 添加路由
+```bash
+$ touch src/views/{MainFrame.vue,Myself.vue,Others.vue,Publish.vue,Update.vue,Detail.vue}
+
+// src/common/router.js
+
+```
+### 顶栏按钮
+```bash
+// 编写顶栏，顶栏渲染时向后端接口/user获取头像，若用户已登录，将成功获取用户头像，否则可跳转至登录页
+$ touch src/components/TopBar.vue
+
+```
+### 修改mian.js
+```bash
+
+
+
+```
+
+
+
+
