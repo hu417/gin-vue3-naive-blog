@@ -169,7 +169,7 @@ onMounted(() => {
 })
 
 const loadDetailedInfo= async() => {
-    let res = await axios.get("user/detailedInfo/" + route.query.id)        
+    let res = await axios.get("user/v1/detailedInfo/" + route.query.id)        
     console.log(res)
     if (res.data.code == 200) {
         user.self = res.data.data.self
@@ -205,14 +205,14 @@ const beforeUpload = async(data) => {
 const customRequest = async({file}) => {
     const formData = new FormData()
     formData.append('file', file.file)
-    let res = await axios.post("/upload", formData)
+    let res = await axios.post("/image/upload", formData)
     console.log(res)
     newUrl.value = res.data.data.filePath
     newAvatar.value = true
 }
 
 const modifyAvatar = async() => {
-    let res = await axios.put("user/avatar/" + route.query.id,
+    let res = await axios.put("user/v1/avatar/" + route.query.id,
     {
         avatar: newUrl.value,
     })     
@@ -227,7 +227,7 @@ const modifyAvatar = async() => {
 }
 
 const modifyName = async() => {
-    let res = await axios.put("user/name/" + route.query.id,
+    let res = await axios.put("user/v1/name/" + route.query.id,
     {
         userName: newName.value,
     })     

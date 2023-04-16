@@ -216,3 +216,17 @@ $ touch src/components/RichTextEditor.vue
 // src/views/Detail.vue
 
 ```
+
+## 修改接口
+```bash
+// 插入分类数据
+mysql> insert into categories(`id`,`category_name`) values ("1","分类"),("2","分类2");
+
+// 修改前端请求后端的接口
+```
+
+# 参考
+github: https://github.com/Eliaukle/Simple-Blog-Community/
+blog: 
+- 后端: https://blog.csdn.net/qq_50737715/article/details/127437065
+- 前端: https://blog.csdn.net/qq_50737715/article/details/127516700

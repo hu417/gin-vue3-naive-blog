@@ -42,7 +42,7 @@
   editorConfig.MENU_CONF['uploadImage'] = {
       // 小于该值就插入 base64 格式（而不上传），默认为 0
       base64LimitSize: 10 * 1024, // 10kb
-      server: serverUrl+"/upload/rich_editor_upload",
+      server: serverUrl+"/image/upload",
   }
   // 插入图片
   editorConfig.MENU_CONF['insertImage'] = {

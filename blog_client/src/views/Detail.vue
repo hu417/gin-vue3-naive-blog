@@ -66,16 +66,16 @@ onMounted(() => {
 })
 
 const loadArticle = async() => {
-    let res1 = await axios.get("article/" + route.query.id)
+    let res1 = await axios.get("article/v1/" + route.query.id)
     console.log(res1)
     if (res1.data.code == 200) {
         articleInfo.value = res1.data.data.article 
-        let res2 = await axios.get("category/" + res1.data.data.article.category_id) 
+        let res2 = await axios.get("category/v1/" + res1.data.data.article.category_id) 
         console.log(res2)
         if (res2.data.code == 200) {
             categoryName.value = res2.data.data.categoryName
         }
-        let res3 = await axios.get("user/briefInfo/" + res1.data.data.article.user_id)
+        let res3 = await axios.get("user/v1/briefInfo/" + res1.data.data.article.user_id)
         console.log(res3)
         if (res3.data.code == 200) {
             user.value = res3.data.data
@@ -84,7 +84,7 @@ const loadArticle = async() => {
                 self.value = true
             }
         }    
-        let res4 = await axios.get("collects/" + route.query.id) 
+        let res4 = await axios.get("collects/v1/" + route.query.id) 
         console.log(res4)
         if (res4.data.code == 200) {
             collected.value = res4.data.data.collected
@@ -94,7 +94,7 @@ const loadArticle = async() => {
 }
 
 const newCollect = async() => {
-    let res = await axios.put("collects/new/" + route.query.id)
+    let res = await axios.put("collects/v1/new/" + route.query.id)
     console.log(res)  
     if (res.data.code == 200) {
         message.warning("已收藏", {showIcon: false})  
@@ -103,7 +103,7 @@ const newCollect = async() => {
 }
 
 const unCollect = async() => {
-    let res = await axios.delete("collects/" + index.value)
+    let res = await axios.delete("collects/v1/" + index.value)
     console.log(res)  
     if (res.data.code == 200) {
         message.warning("取消收藏", {showIcon: false})  
@@ -145,7 +145,7 @@ const toDelete = async (blog) => {
       positiveText: '确定',
       negativeText: '取消',
       onPositiveClick: async () => {
-            let res = await axios.delete("article/" + articleInfo.value.id)
+            let res = await axios.delete("article/v1/" + articleInfo.value.id)
             if(res.data.code == 200){
                 message.info(res.data.msg)
                 goback()

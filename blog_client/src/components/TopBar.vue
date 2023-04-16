@@ -36,14 +36,14 @@ onMounted(() => {
 })
 
 const loadAvatar= async() => {
-    let res = await axios.get("/user")    
+    let res = await axios.get("/user/v1/info")    
     console.log(res)
     if (res.data.code == 200) {
         user.avatarUrl = serverUrl + res.data.data.avatar
         user.id = res.data.data.id
         login.value = true
     }
-} 
+}
 
 const toMain = () => {
     router.push("/")    

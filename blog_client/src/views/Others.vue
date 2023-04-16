@@ -120,7 +120,7 @@ onMounted(() => {
 })
 
 const loadDetailedInfo = async() => {
-    let res1 = await axios.get("user/detailedInfo/" + route.query.id)        
+    let res1 = await axios.get("user/v1/detailedInfo/" + route.query.id)        
     console.log(res1)
     if (res1.data.code == 200) {
         user.self = res1.data.data.self
@@ -133,7 +133,7 @@ const loadDetailedInfo = async() => {
         articles.value = res1.data.data.articles
         collects.value = res1.data.data.collects
         following.value = res1.data.data.following
-        let res2 = await axios.get("following/" + route.query.id) 
+        let res2 = await axios.get("following/v1/" + route.query.id) 
         console.log(res2)
         if (res2.data.code == 200) {
             followed.value = res2.data.data.followed
@@ -143,7 +143,7 @@ const loadDetailedInfo = async() => {
 } 
 
 const newFollow = async() => {
-    let res1 = await axios.put("following/new/" + route.query.id)
+    let res1 = await axios.put("following/v1/new/" + route.query.id)
     console.log(res1)  
     if (res1.data.code == 200) {
         message.warning("已关注", {showIcon: false})  
@@ -152,7 +152,7 @@ const newFollow = async() => {
 }
 
 const unFollow = async() => {
-    let res1 = await axios.delete("following/" + index.value)
+    let res1 = await axios.delete("following/v1/" + index.value)
     console.log(res1)  
     if (res1.data.code == 200) {
         message.warning("取消关注", {showIcon: false})  

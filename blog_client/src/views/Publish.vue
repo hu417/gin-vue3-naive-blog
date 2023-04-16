@@ -117,7 +117,7 @@ onMounted(() => {
 })
 
 const loadAvatar= async() => {
-    let res = await axios.get("/user")    
+    let res = await axios.get("/user/v1/info")    
     console.log(res)
     if (res.data.code == 200) {
         user.avatarUrl = serverUrl + res.data.data.avatar
@@ -127,7 +127,7 @@ const loadAvatar= async() => {
 } 
 
 const loadCategories = async() =>{
-    let res = await axios.get("/category")
+    let res = await axios.get("/category/v1")
     console.log(res)
     categoryOptions.value = res.data.data.categories.map((item)=>{
       return {
@@ -146,8 +146,8 @@ const closeSubmitModal = () => {
 }
 
 const beforeUpload = async(data) => {
-    if (data.file.file?.type !== "image/png") {
-        message.error("只能上传png格式的图片")
+    if (data.file.file?.type !== "image/png" || data.file.file?.type !== "image/jpg") {
+        message.error("只能上传png/jpg格式的图片")
         return false;
     }
     return true;
@@ -156,7 +156,7 @@ const beforeUpload = async(data) => {
 const customRequest = async({file}) => {
     const formData = new FormData()
     formData.append('file', file.file)
-    let res = await axios.post("/upload", formData)
+    let res = await axios.post("/image/upload", formData)
     console.log(res)
     addArticle.headImage = res.data.data.filePath
     newHeadImage.value = true
@@ -168,7 +168,7 @@ const deleteImage = () => {
 }
 
 const submit = async() => {
-    let res = await axios.post("/article", {
+    let res = await axios.post("/article/v1", {
         category_id: addArticle.categoryId,
         title: addArticle.title,
         content: addArticle.content,

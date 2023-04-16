@@ -81,7 +81,7 @@ const loadArticles = async(pageNum = 0) =>{
     if (pageNum != 0){
         pageInfo.pageNum = pageNum;
     }
-    let res = await axios.post(`/article/list?keyword=${pageInfo.keyword}&pageNum=${pageInfo.pageNum}&pageSize=${pageInfo.pageSize}&categoryId=${pageInfo.categoryId}`)
+    let res = await axios.post(`/article/v1/list?keyword=${pageInfo.keyword}&pageNum=${pageInfo.pageNum}&pageSize=${pageInfo.pageSize}&categoryId=${pageInfo.categoryId}`)
     console.log(res)
     if (res.data.code == 200) {
         articleList.value = res.data.data.article
@@ -92,7 +92,7 @@ const loadArticles = async(pageNum = 0) =>{
 }
 
 const loadCategories = async() =>{
-    let res = await axios.get("/category")
+    let res = await axios.get("/category/v1")
     console.log(res)
     categoryOptions.value = res.data.data.categories.map((item)=>{
       return {

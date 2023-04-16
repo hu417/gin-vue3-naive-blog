@@ -118,7 +118,7 @@ onMounted(() => {
 })
 
 const loadAvatar= async() => {
-    let res = await axios.get("/user")    
+    let res = await axios.get("/user/v1/info")    
     console.log(res)
     if (res.data.code == 200) {
         user.avatarUrl = serverUrl + res.data.data.avatar
@@ -127,7 +127,7 @@ const loadAvatar= async() => {
 } 
 
 const loadCategories = async() =>{
-    let res = await axios.get("/category")
+    let res = await axios.get("/category/v1")
     console.log(res)
     categoryOptions.value = res.data.data.categories.map((item)=>{
       return {
@@ -138,7 +138,7 @@ const loadCategories = async() =>{
 }
 
 const loadArticle = async() => {
-    let res = await axios.get("/article/" + route.query.id)
+    let res = await axios.get("/article/v1/" + route.query.id)
     console.log(res)
     if (res.data.code == 200) {
         updateArticle.categoryId = res.data.data.article.categoryId,
@@ -169,7 +169,7 @@ const beforeUpload = async(data) => {
 const customRequest = async({file}) => {
     const formData = new FormData()
     formData.append('file', file.file)
-    let res = await axios.post("/upload", formData)
+    let res = await axios.post("/image/upload", formData)
     console.log(res)
     updateArticle.headImage = res.data.data.filePath
     newHeadImage.value = true
@@ -181,7 +181,7 @@ const deleteImage = () => {
 }
 
 const submit = async() => {
-    let res = await axios.put("/article/" + route.query.id, {
+    let res = await axios.put("/article/v1/" + route.query.id, {
         category_id: updateArticle.categoryId,
         title: updateArticle.title,
         content: updateArticle.content,
