@@ -160,11 +160,28 @@ $ touch src/components/TopBar.vue
 ```
 ### 修改mian.js
 ```bash
-
-
+// 修改main.js，添加拦截器传token，即每个页面都向后端传token，无论后端需不需要
 
 ```
 
-
+## 个人信息页
+个人信息页用到的组件有:
+- 卡片卡片[ Card - Naive UI](https://www.naiveui.com/zh-CN/os-theme/components/card)
+- 模态框模态框[ Modal - Naive UI](https://www.naiveui.com/zh-CN/os-theme/components/modal)
+- 图标图标[ Icon - Naive UI](https://www.naiveui.com/zh-CN/os-theme/components/icon)
+> 用户点击头像可进入用户信息页，登录用户查看自身与他人的信息页渲染有所不同，自身的个人信息页有修改信息按键，而他人的个人信息页有关注按键
+### 修改Myself.vue
+```bash
+// src/views/Myself.vue
+```
+### 修改Others.vue
+```bash
+// src/views/Others.vue
+```
+### 测试访问
+```bash
+http://localhost:5173/#/myself
+http://localhost:5173/#/others
+```
 
 
