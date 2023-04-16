@@ -200,3 +200,13 @@ http://localhost:5173/#/others
 $ touch src/components/RichTextEditor.vue
 
 ```
+## 文章发布修改页
+文章发布与修改页类似，不同的是修改页要先获取原文章数据再将其渲染
+### 修改Publish.vue
+```bash
+// src/views/Publish.vue
+```
+### 修改Updata.vue
+```bash
+// src/views/Update.vue
+```
