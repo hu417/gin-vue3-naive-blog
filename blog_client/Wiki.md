@@ -210,3 +210,9 @@ $ touch src/components/RichTextEditor.vue
 ```bash
 // src/views/Update.vue
 ```
+## 文章详情页
+> 在文章详情页中展示文章标题、内容、分类、作者头像等内容，这里需要判断查看文章详情的是否是作者，如果是的话添加编辑和删除按键
+```bash
+// src/views/Detail.vue
+
+```
