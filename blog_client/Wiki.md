@@ -184,4 +184,19 @@ http://localhost:5173/#/myself
 http://localhost:5173/#/others
 ```
 
+## 主页
+用户在主页的输入框文本输入[ Input - Naive UI](https://www.naiveui.com/zh-CN/os-theme/components/input)输入关键词，通过选择器弹出选择[ Popselect - Naive UI](https://www.naiveui.com/zh-CN/os-theme/components/popselect)选择分类，通过分页器分页[ Pagination - Naive UI分页](https://www.naiveui.com/zh-CN/os-theme/components/pagination)
 
+### 修改MainFrame.vue
+```bash
+// src/views/MainFrame.vue
+```
+### 测试访问
+// http://localhost:5173/#/
+
+## 富文本编辑组件
+富文本: https://www.wangeditor.com/v5/for-frame.html
+```bash
+$ touch src/components/RichTextEditor.vue
+
+```
