@@ -107,6 +107,7 @@ $ touch src/common/router.js  // 路由配置入口
 ## 登录注册面
 
 Naive UI: https://www.naiveui.com/zh-CN/os-theme/components/button
+用到的组件为表单Form表单: https://www.naiveui.com/zh-CN/os-theme/components/form
 
 ### 注册页面
 ```bash
