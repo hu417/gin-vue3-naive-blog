@@ -102,5 +102,38 @@ $ touch src/common/router.js  // 路由配置入口
 
 </style>
 
+```
+
+## 登录注册面
+
+Naive UI: https://www.naiveui.com/zh-CN/os-theme/components/button
+
+### 注册页面
+```bash
+// 编写注册页，获取用户的用户名、手机号和密码并传给后端
+$ touch src/views/Register.vue 
 
 ```
+### 保存token
+```bash
+$ mkdir -p src/stores
+$ touch src/stores/UserStore.js   // token保存起来，以便传给其他接口
+
+```
+### 登录页面
+```bash
+// 编写登录页，获取用户的手机号和密码传给后端，登录成功后存储后端传过来的token
+$ touch src/views/Login.vue
+
+```
+### 图片准备
+```bash
+// src/assets/image
+```
+### 修改路由
+```bash
+// common/router.js
+```
+### 测试访问
+- [x] 运行server端
+- [x] 运行client端

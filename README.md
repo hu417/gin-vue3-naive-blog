@@ -14,9 +14,10 @@ git config --global credential.helper manager
 
 // 提交项目
 git add .
-git commit -m "fix: blog项目
-1、server-go接口开发
-2、client-vue初始化
+git commit -m "fix: blog项目-前端开发
+1、注册/登录页面开发
 " 
-git tag -a v0.1 -m "版本v0.1"
+git tag -a v0.2 -m "版本v0.2"
 git push -u origin main --tags
+
+
